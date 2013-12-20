@@ -1,0 +1,23 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: UTF8
+
+@ARTICLE{zebrafish1,
+  author = {Hongtao Liu, Gustavo Gomez, Sophia Lin, Shuo Lin, Chentao Lin},
+  title = {Optogenetic Control of Transcription in Zebrafish},
+  journal = {PLoS One},
+  year = {2012},
+  __markedentry = {},
+  file = {Optogenetics Paper Blue Light Construct:journal.pone.0050738.pdf:PDF},
+  owner = {carles},
+  timestamp = {2013.10.03}
+}
+
+@comment{jabref-meta: psDirectory:/home/carles/QCB301/Papers;}
+
+@comment{jabref-meta: fileDirectory-carles@kingscourt:/home/carles/QCB
+301/Papers;}
+
+@comment{jabref-meta: fileDirectory:/home/carles/QCB301/Papers;}
+
+@comment{jabref-meta: pdfDirectory:/home/carles/QCB301/Papers;}
+

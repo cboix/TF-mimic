@@ -1,0 +1,72 @@
+#!/bin/bash
+TARGETS=$1
+OUTFILE=$2
+QCBDIR=~/QCB301
+REFDIR=$QCBDIR/ReferenceGenomesandAnnotations
+PROMOTERS=$REFDIR/promoter_sequences.fasta
+
+rm -f $OUTFILE
+while read -r p
+do 
+    eval $( echo $p | awk '{printf("GENE=%s",$1)}' )
+    awk -v gene=$GENE 'BEGIN{RS="\n>";ORS="\n>"}$0 ~ gene{print $0}' $PROMOTERS >> $OUTFILE
+
+done < $TARGETS
+
+# MAY NEED TO put associations for complex genes
+# PROMOTER file decomposition, redo if necessary
+awk 'BEGIN{RS="\n>";FS="\t"}$0 !~ /\(/{ gsub(">","",$0); gsub("\x27","",$0); fname = ("/home/carles/QCB301/promoters/" $1 ".fasta"); print ">" $0 > fname}' $PROMOTERS
+
+# Make it separate each nucleotide on a different line!
+## For each fasta promoter file in QCB301/promoters: 
+ls $QCBDIR/promoters > .tmpfile
+
+while read -r p
+do
+    eval $( echo $p | awk '$0 ~ /fasta/{printf("fasta=%s",$1)}' )
+    # NEED TO CHECK that it is not 0 size (if it isnt fasta)
+    if [[ -s $fasta ]] {
+        prm="${fasta%.*}"\.promoter
+        awk 'BEGIN{RS="\n"; ORS=""} NR > 1{print $0}' $QCBDIR/promoters/$fasta |  perl -F, -ane ' $,=" "; print split("",$F[0])' | awk 'BEGIN{RS=" "; ORS="\n"}{print $0}' > $QCBDIR/promoters/$prm
+    } fi
+
+done < .tmpfile
+
+
+# Change the header...
+ls $QCBDIR/promoters > .tmpfile2
+while read -r p
+do
+    eval $( echo $p | awk '$0 ~ /tfbs/{printf("tfbs=%s",$1)}' )
+    # NEED TO CHECK that it is not 0 size (if it isnt fasta)
+    if [[ -s $tfbs ]] {
+        tfbs2="${tfbs%.*}"\.tfbs_2
+        awk 'NR == 1{print "pwm gene start end occ iden consensus value strand"}NR > 1{print $0}' $tfbs > $tfbs2
+        mv $tfbs2 $tfbs
+    } fi
+done < .tmpfile2
+rm -f .tmpfile2
+
+# Condense, with a threshold of 0.25
+ls $QCBDIR/promoters > .tmpfile3
+while read -r p
+do
+    eval $( echo $p | awk '$0 ~ /tfbs/{printf("tfbs=%s",$1)}' )
+    # NEED TO CHECK that it is not 0 size (if it isnt fasta)
+    if [[ -s $tfbs ]] {
+        pcounts="${tfbs%.*}"\.pcounts
+        awk '$5 > 0.25 && NR > 1 {print $1}' $tfbs | sort | uniq -c > $pcounts
+    } fi
+done < .tmpfile3
+rm -f .tmpfile3
+
+# Paper -- Dsl1 mechanism (smallest one, has only 3 subunits).
+# Jun's rubric -- ALSO READ THE RUBRIC
+# Abstract: include one sentence on your critique
+# Background: Will make a list of important parts, cover them all equally. He will give points per each part that you hit correctly)
+# Data analysis: Write in your own words, your summary.
+# Critique: 
+#   1. Data interpretation (positive or negative interpretation. You do not have to be negative. If for example you think that the figure is good but the text is not sufficient to explain it, then you can try to supplement the explanation, drawing on the figure. If irrationally negative, this is bad, you get the same point by being positive.)
+#   2. Implication (10 = professional, 8 = more than one good idea.... Need to understand the background and say what the contribution of this paper to the research community is.)
+#   3. Future directions (Deeply related to the background research, as you need to read reviews to get the ideas about the field (SNAREs, tethering factors, membrane trafficking, etc.)) No progress in the field after 2009. (for example, relate to CDG? or something like that-- what might mutations do)
+#	For example is it more relevant to do this in a different system? Can we prove something better? Make sure that technologically it makes sense as well.

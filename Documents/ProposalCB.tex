@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage[lmargin =1in,rmargin=1in,tmargin =1in, bmargin =1in]{geometry}                
+\geometry{letterpaper}               
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{amssymb} \usepackage{fancyhdr}
+\usepackage[affil-it]{authblk}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{natbib}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhead{} % delete current setting for header
+\fancyhead[C]{\noindent Cell Arrest in Yeast: An Optogenetic Aproach.\hfill Carles Boix }
+%\linespread{1.6}
+
+\begin {document}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Goal:
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Title:} Gratuitous induction of \emph{FAR1-22} to mediate cellular arrest by both blue light and $\beta$-estradiol and characterization of stress due to blue light and Cry2 and Cib1 in \emph{S. cerevisiae}. %Change blue light to BL + the cryptochromes
+
+\textbf{Goal:} To characterize the sensitivity of the cell cycle to Far1-22p, create a blue light or $\beta$-estradiol inducible construct to promote cell arrest in \emph{S. cervisiae}, and quantitatively assess the response of yeast to blue light and Cry2 and Cib1.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Background:
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Background and significance:} 
+% TODO note FAR1-22 is dominant.
+The current set of tools to induce cell cycle arrest and synchronize cells for study of the mitotic cell cycle or of related pathways are limited, expensive, and non-gratuitous, either activating unrelated genes or damaging the cell. One such technique relies on the fact that entry from the G$_1$ to the S phase of the cell cycle is mediated by Cdc28-Cln kinase, can be inhibited by Far1p upon activation of the mating pathway (1). While overexpression of \emph{FAR1} alone does not cause cell arrest, as the protein must be post-translationally modified by other components of the pathway, a dominant \emph{FAR1} mutant, \emph{FAR1-22}, has been shown to arrest the cell in G$_1$ when expressed (2). As Far1-22 is missing a site necessary for Cdc28-Cln triggered degradation, it is particularly stable and prevents the relocation of Cdc24, a factor required for cell polarization, to the cell membrane (7).
+
+I propose the use of a gratuitous inducer to express \emph{FAR1-22} and quickly and efficiently induce cell cycle arrest. This would provide an unparalleled tool to synchronize cells and study the cell cycle and related pathways.  I will use two methods to singly express \emph{FAR1-22}. Using a well characterized zinc finger promoter, I will regulate \emph{FAR1-22} using a $\beta$-estradiol regulated system which relies on the estrogen receptor to only localize the transcription factor construct to the nucleus in the presence of inducer (6). Similarly, using the same promoter, I will separately induce the cell cycle gene with a transcription factor utilizing a set of \emph{Arabidopsis} proteins Cry2 and Cib1 (8), which only interact in the presence of blue light (3). Both approaches permit sensitive, fast, and nearly gratuitous transcriptional regulation of single genes in \emph{S. cerevisiae}.  In order to provide a more robust basis for this tool, I also propose to analyze the effects of blue light and the toxicity of the Cry2 and Cib1 proteins to \emph{S. cerevisiae}.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aims:
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Aim 1:} \emph{Evaluation of yeast cell cycle sensitivity to Far1-22p.}
+In order to characterize the sensitivity of growth to the level of Far1-22p, I will transform \emph{S. cerevisiae} cells with plasmids containing \emph{GAL4} promoters in front of \emph{FAR1-22} (from D. Botstein) and \emph{FAR1} (control, to be built by homologous recombination in yeast). The sensitivity of the cell cycle to the level of \emph{FAR1-22} will be assessed quantitatively by first growing cells (\emph{FAR1-22}, \emph{FAR1}, and \emph{WT}) overnight in raffinose and then taking serial dilutions of the original colony and measuring colony forming ability on plates with $2\%$ galactose and $0-2\%$ glucose at $0.25\%$ intervals. This will permit me to determine the appropriate level of induction by $\beta$-estradiol or blue light. In order to ascertain whether cells exit the G1 phase at the same time once \emph{FAR1-22} is turned off, the addition of glucose will be used to turn off \emph{FAR1-22} expression in cells grown in galactose and minimal glucose. These cells will then be stained with propidium iodide to determine DNA content over time using flow cytometry. If time permits, the rate at which cells exit the G1 phase of the cell cycle after $\alpha$-factor mediated cell arrest will also be calculated using flow cytometry as a comparison to \emph{FAR1-22}.  Furthermore, the effect on growth rate of the \emph{FAR1-22} and \emph{FAR1-WT} strains will be assessed by growing cells overnight in raffinose and measuring OD$_{600}$ over time of cells at varying concentrations of glucose and galactose. 
+
+%------------------------------------------------------------------------ 
+\textbf{Aim 2:} \emph{Construction of a system to gratuitously induce cell arrest in yeast.}
+I will knock out \emph{TRP1} with the CORE cassette (composed of \emph{URA3} and \emph{KANMX}) from the pCORE plasmid in a previously engineered strain containing the ZEV system. After selecting for G418 and FAA resistance and 5-FOA sensitivity, I  will then replace this cassette with a zinc finger promoter corresponding to the zinc finger DBD and \emph{FAR1-22} (and \emph{FAR1} as a control) and select for this recombinant by testing for 5-FOA resistance and G418 sensitivity. 
+%
+Once the strain has been sequenced to confirm the replacement, I will induce \emph{FAR1-22} with differing levels of $\beta$-estradiol (1 to 100 nM) and test colony forming ability as outlined in \emph{Aim 1} (6). Given that this strain does not show any growth defect and demonstrates cell arrest comparable to that seen in \emph{Aim 1}, I will transform the strain with plasmids containing the \emph{ZiF$_{268}$ DBD-CRY2} and \emph{GAL4 AD-CIB1} constructs (plasmids from M. McClean).
+%
+After confirmation of plasmid sequence, transformed yeast will be exposed to a range of fluence rates of blue light (from $42$ to $120$ 20 mmol m$^{−2}$ s$^{−1}$) and cells will be visualized by microscopy to confirm cellular arrest. The sensitivity of growth to the level of Far1-22p will be assessed quantitatively by measuring OD$_{600}$ of cells grown at various light intensities and qualitatively by the rate of colony formation on plates with minimal media (in glycerol). 
+% 
+The long lifespan of Far1-22p relative to Far1p ($\sim 120$ rather than $\sim 30$ minutes) may cause cells to exit G1 in an unsynchronized manner. If flow cytometry demonstrates this to be the case, I will construct a version of Far1-22p with a shorter lifetime by placing a sequence for an N-degron tag at the front of \emph{FAR1-22} (5). Furthermore, it may be possible to degrade Far1-22p by expressing non-localized cdc4, which degrades Far1p in \emph{WT} (4).
+
+%------------------------------------------------------------------------ 
+\textbf{Aim 3:} \emph{Characterization of yeast response to CRY2 and CIB1 induction under blue light.}
+To assess the impacts of using blue light to express genes with Cry2/Cib1 I will investigate the effect of blue light on yeast. Growth rate and gene expression will be measured at a range of fluence rates of blue light (from $42$ to $120$ 20 mmol m$^{−2}$ s$^{−1}$) in \emph{S. cerevisiae} cells transformed with the plasmids containing the constructs under the ACT1 promoter. I will measure growth using OD$_{600}$ readings and perform microarrays for the fluence rates with measured growth rate defects of more than $2\%$, using uninduced samples as control. To analyze microarray data, I will cluster genes by expression and search for affected pathways and potential binding sites to the Cry2/Cib1 construct. If growth defects are not correlated with gene expression, I will measure growth with Cry2 and Cib1 expressed under weaker constitutive promoters to test for toxicity. 
+
+%------------------------------------------------------------------------ 
+%\textbf{Aim 2:} \emph{Creation of an optogenetic switch.}
+% I hypothesize that background light will induce a low level of transcription of any gene of interest from the CRY2 mediated promoter.  A system characterized by low baseline transcription and a rapid increase in promoter mediated transcription to quickly raise the expression of a gene of interest, the creation of an optogenetic switch, would provide a useful method for constitutively turning on genes in the cell.  In particular, in the case of induction of genes which may interfere with cell growth, such as Far1-22, low baseline levels of transcription may interfere with normal function.  To decrease the sensitivity of light induced transcription, I will place the DNA binding domain corresponding to the transcription factor construct in front of the CIB1 subunit to form a positive feedback mechanism to regulate the level of the transcription factor.  Instead of constitutively expressing the TF, positive feedback coupled with transcriptional noise will create a bistable system where transcription will jump from low to high levels upon induction by light and will return to baseline after removing light stimulus.  I will assess expression levels with both a GFP reporter and by measuring cell arrest relative to controls with ACT1 promoters.  If a suitable baseline level of transcription is not achieved, I will attempt to reduce the signal by expressing reporters from weaker DNA binding domains or prevent the accumulation of TF by rapidly degrading the CIB1 subunit by tagging it with a N-degron-tag and inducing the TEV protease (5).
+
+%Summarize the anticipated results of the planned experiments and the way in which these potential outcomes could be interpreted.  Include potential pitfalls of the approach and possible solutions to these anticipated challenges.
+\textbf{Expected Outcomes:} 
+Upon completion of my aims, I will have characterized the sensitivity of the cell cycle to Far1-22p expression using the GAL promoter. Furthermore, I will have created a gratuitous system for inducing cell arrest using either blue light or $\beta$-estradiol. If experimentation using the GAL promoter reveals that I have to shorten the lifespan of Far1-22p due to its interaction with Cdc24, I will do so by tagging it for degradation. I will also have characterized the impact of the \emph{CRY2-CIB1} system and blue light on yeast.
+
+\textbf{Broader Impacts:}
+Completion of my aims will not only lead to the creation of a simple and efficient method for cell synchronization to be used in work on cell cycle related networks, but my analysis of the optogenetic transcription factor system will inform use of this tool in future single gene studies, in particular for network analysis. Continuing experimentation could focus on the creation of a switch-like signal for the light induced constructs by placing the constructs under their own promoters. The creation of a bistable switch-like system for using the transcription factor would also add to the possibilities for network study. Finally, the full system could be placed on to one or two plasmids in order to conveniently enable cell arrest in any strain.
+
+\small
+\textbf{References:}
+
+(1) Peter, M., Herskowitz, I. (1994). Direct inhibition of the yeast cyclin-dependent kinase Cdc28-Cln by Far1. Science, 265(5176), 1228-1231.
+
+(2) Henchoz, S., \ldots Peter, M. (1997). Phosphorylation-and ubiquitin-dependent degradation of the cyclin-dependent kinase inhibitor Far1p in budding yeast. Genes and development, 11(22), 3046-3060. %FAR1-22
+
+(3) Liu, H.,\ldots Lin, C. (2008). Photoexcited CRY2 interacts with CIB1 to regulate transcription and floral initiation in Arabidopsis. Science, 322(5907), 1535-1539. % FIRST CIB / CRY2 paper.
+
+(4) Blondel, M.,\ldots Peter, M. (2000). Nuclear-specific degradation of Far1 is controlled by the localization of the F-box protein Cdc4. The EMBO journal, 19(22), 6085-6097. % Can degrade.
+
+(5) McIsaac, R.S.,\ldots Botstein,D. (2011) Fast-acting and nearly gratuitous induction of gene expression and protein depletion in Saccharomyces cerevisiae. Mol. Biol.  Cell., 22, 4447$-$4459 % TEV protease and N-degron tagging
+
+(6) McIsaac, R.S., \ldots Noyes, M.B. (2013). Synthetic gene expression perturbation systems with rapid, tunable, single-gene specificity in yeast. Nucleic acids research, 41(4), e57$-$e57.
+
+(7) Shimada, Y.,\ldots Peter, M. (2000). Nuclear sequestration of the exchange factor Cdc24 by Far1 regulates cell polarity during yeast mating. Nature cell biology, 2(2), 117-124.
+
+(8) Kennedy, M.J., \ldots Tucker, C. L. (2010). Rapid blue-light-mediated induction of protein interactions in living cells. Nature methods, 7(12), 973-975.
+
+\end{document}

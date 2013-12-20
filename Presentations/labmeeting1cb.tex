@@ -1,0 +1,88 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\usetheme{Goettingen}
+\defbeamertemplate{itemize item}{checkbox}{\Square}
+\defbeamertemplate{itemize item}{checked}{\Square\llap\CheckmarkBold}
+
+\title[Lab Meeting I]{Lab Meeting I}
+\author{Carles Boix}
+\begin{document}
+
+\begin{frame}
+    \begin{center}
+        {\large \textsc{Overall Goals}}
+    \end{center}
+        \small
+    \begin{minipage}[ht!]{0.49\textwidth}
+        \begin{itemize}
+            \item Creation of a plasmid containing \emph{FAR1-22}/\emph{FAR1-WT} driven by \emph{GALpr}.
+            \item Testing under a galactose and glucose gradient to determine level of activation required to stop cell cycle.
+            \item Flow cytometry to measure DNA content after cell arrest.
+        \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[ht!]{0.49\textwidth}
+        \begin{itemize}
+            \item Creation of a genomic strain containing \emph{FAR1-22}/\emph{FAR1-WT} driven by \emph{ZEV}$_{268}$\emph{pr}.
+            \item Testing under a $\beta$-estradiol gradient mimicking the gal/glu gradient.
+            \item Determination of appropriate conditions for both $\beta$-estradiol and blue light induction.
+            \item Blue light controls.
+        \end{itemize}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\large \textsc{Steps for Plasmid Construction}}
+    \end{center}
+        \begin{itemize}
+            \item[$\boxtimes$]  Miniprep and digest pMM86
+            \item[$\boxtimes$]  Miniprep pGAL-FAR1-22 (pTCN113)
+            \item[$\boxtimes$]  PCR amplify FAR1-22 fragment
+            \item[$\boxtimes$]  Colony PCR amplify FAR1-WT fragment
+            \item[$\square$]  Digest both fragments
+            \item[$\square$]  Gel extraction of fragments
+            \item[$\square$]  Ligation 
+            \item[$\square$] Transformation into bacteria
+            \item[$\square$] Miniprep and sending to sequencing
+            \item[$\square$] Transformation into yeast
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\large \textsc{Steps for Genomic Strain Construction}}
+    \end{center}
+        \begin{itemize}
+            \item[$\boxtimes$]  Miniprep pMM299 (ZEVpr)
+            \item[$\boxtimes$]  Miniprep pCORE
+            \item[$\boxtimes$]  Miniprep pGAL-FAR1-22 (pTCN113)
+            \item[$\boxtimes$]  PCR amplify CORE fragment
+            \item[$\boxtimes$]  PCR amplify FAR1-22 fragment
+            \item[$\boxtimes$]  Colony PCR amplify FAR1-WT fragment
+            \item[$\boxtimes$]  Colony PCR amplify ZEVpr fragment
+            \item[$\boxminus$]  Transform ZEV yeast with CORE
+            \item[$\square$] Transform ZEV+CORE with ZEVpr + FAR fragment
+            \item[$\square$] Send to sequencing.
+            \item[$\square$] Transform ZEV + FAR with the blue light plasmids
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\large \textsc{Other steps in the near future:}}
+    \end{center}
+        \begin{itemize}
+            \item[$\square$] Order sequencing primers.
+            \item[$\square$] Build blue light rig.
+            \item[$\square$] Transform ZEV strain w/ Blue light plasmids.
+            \item[$\square$] Set up Galactose+Glucose stock.
+            \item[$\square$] Plan for FACS experiment.
+        \end{itemize}
+\end{frame}
+
+
+\end{document}

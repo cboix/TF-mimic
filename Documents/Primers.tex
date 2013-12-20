@@ -1,0 +1,115 @@
+\documentclass[landscape,a4paper]{article}
+\usepackage{calendar} % Use the calendar.sty style
+\usepackage[landscape,margin=0.5in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\noindent \today \hfill Carles Boix }
+
+\date{\today} %no date.
+
+\begin{document}
+\noindent
+\StartingDayNumber=1 % Calendar starting day, default of 1 means Sunday, 2 for Monday, etc
+ 
+%	TITLE SECTION
+\begin{center}
+\textsc{\LARGE Primers for QCB 301}\\ % Title text
+\end{center}
+
+%----------------------------------------------------------------------------------------
+\section*{Purposes:}
+\begin{itemize}
+    \item[\textbf{1.}] Primers for \emph{FAR1-wt} from genome to \emph{GAL4pr} plasmid.
+    \item[\textbf{2.}] Primers for creating \emph{FAR1-22} mutation (to be used with \textbf{1.}).
+    \item[\textbf{3.}] Primers for transferring \emph{FAR1-wt} and \emph{FAR1-22} from plasmid to genome.
+    \item[\textbf{4.}] Primers for transferring \emph{ZEVpr} to genome.
+    \item[\textbf{5.}] Primers for knocking out \emph{TRP1} with \emph{CORE}.
+\end{itemize}
+\section*{Primers:}
+\begin{itemize}
+    \item[\textbf{1.}] Forward pairs with \emph{HindIII} and backward pairs with \emph{BamHI}:
+
+        \emph{These are the old primers. Sites can be found in FAR1 for each enzyme.}
+        \[ 5' \qquad \emph{HindIII site } \cdots \emph{ Start of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{AATAAAGCTTATGAAGACACCAACAAGAGTTTC} \qquad 3' \] 
+        \[ 5' \qquad \emph{BamHI site } \cdots \emph{ RC end of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{AATAGGATCCCTAGAGGTTGGGAACTTCC} \qquad 3' \] 
+
+        \emph{These are the new primers. Only one site each in pMM86 and none in FAR}
+        \[ 5' \qquad \emph{XhoI site } \cdots \emph{ Start of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{AATACTCGAGATGAAGACACCAACAAGAGTTTC} \qquad 3' \] 
+        \[ 5' \qquad \emph{NotI site } \cdots \emph{ RC end of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{AATAGCGGCCGCCTAGAGGTTGGGAACTTCC} \qquad 3' \] 
+
+
+        \emph{These are the new primers for recombination. The first matches the end of GAL. Note that it is best to cut with NotI or a site after XhoI but before NotI}
+
+        \[ 5' \qquad \emph{End of pGAL } \cdots \emph{ Start of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{TATACTTTAACGTCAAGGAGAAAAAACTATACTCGAGATGAAGACACCAACAAGAGTTTC} \qquad 3' \] 
+        \[ 5' \qquad \emph{RC After NotI site } \cdots \emph{ RC end of FAR1} \qquad 3' \] 
+        \[ 5'\qquad \textbf{CGCGCAATTAACCCTCACTAAAGGGAACAAAAGCTGGAGCTCTAGAGGTTGGGAACTTCC} \qquad 3' \] 
+
+ 
+    \item[\textbf{2.}] First will be used with second from \textbf{1.}, and second will be used with first from \textbf{2.}:
+        \[ 5' \qquad \textbf{CAAATCTTGGCCTAATGATCCACCCACCAAGTTTGAAGAAAAC} \qquad 3' \]
+        \[ 5' \qquad \textbf{GTTTTCTTCAAACTTGGTGGGTGGATCATTAGGCCAAGATTTG} \qquad 3' \] 
+
+    \item[\textbf{3.}] Connect ends of \emph{FAR1} to ZEVpr (front) and pCORE (back)\\
+
+           % R.C of the end of TRP1: 5'  AATAAATACTACTCAGTAATAAC 3'\\
+            \[ 5' \qquad \emph{ZEVpr end } \cdots \emph{ Start of FAR1} \qquad 3' \] 
+        \[ 5' \qquad \textbf{CGTCAAGGAGAAAAAACTATAGGTACCACTAGTATGGACGTATGAAGACACCAACAAGAGTTTC} \qquad 3' \] 
+            \[ 5' \qquad \emph{RC of after Trp1 } \cdots \emph{ RC of end of FAR1} \qquad 3' \] 
+        \[ 5' \qquad \textbf{GTGCACAAACAATACTTAAATAAATACTACTCAGTAATAACCTAGAGGTTGGGAACTTCC} \qquad 3' \] 
+
+    \item[\textbf{4.}] Connect ZEVpr to \emph{FAR1} (back) and pCORE (back)\\
+
+        % before TRP1 (or pCORE): 5' CACAAAGGCAGCTTGGAGT 3' -- has to attach to ZEVpr in front.\\
+        % start of ZEV:  TTATATTGAATTTTCAAAAATTCTT ACTTTTTTTTTGGATGGACGCAAAGAA
+        % end of ZEV: CGTCAAGGAGAAAAAACTATAGGTACCACTAGTATGGACGT
+        % RC end of ZEV: ACGTCCATACTAGTGGTAC CTATAGTTTTTTCTCCTTGACG
+
+\[ 5' \qquad \emph{before Trp1 } \cdots \emph{ Start of ZEVpr} \qquad 3' \] 
+\[ 5' \qquad \textbf{GTGAGTATACGTGATTAAGCACACAAAGGCAGCTTGGAGTTTATATTGAATTTTCAAAAATTCTTA} \qquad 3' \] 
+\[ 5' \qquad \emph{RC of start of FAR1 } \cdots \emph{ RC of end of ZEVpr} \qquad 3' \] 
+\[ 5' \qquad \textbf{TGTATTTTTTTTTCAAACGAAACTCTTGTTGGTGTCTTCATACGTCCATACTAGTGGTAC} \qquad 3' \] 
+
+    \item[\textbf{5.}] pCORE to TRP1 (Genomic)\\
+%      On the URA3 side (start):
+% GTGAGTATACGTGATTAAGCA CACAAAGGCAGCTTGGAGT   ATG $\Longrightarrow$ trp1
+
+        \[ 5' \qquad \emph{before TRP1 } \cdots \emph{ Start of CORE} \qquad 3' \] 
+        \[ 5' \qquad  \textbf{GTGAGTATACGTGATTAAGCACACAAAGGCAGCTTGGAGTTCCTTACCATTAAGTTGATC} \qquad 3' \] 
+
+    % GENOMIC.
+    %   On the kanMX4 side (end):\\
+    %   end of trp1 --  TAG GTTATTACTGAGTAGTATTTATTTAAGT \\
+    %   r.c. is:5' ACTTA AATAAATACTACTCAGTAATAAC CTA 3' $\Longrightarrow $ trp 1 complement\\
+
+        \[ 5' \qquad \emph{RC of after TRP1 } \cdots \emph{ RC of end of CORE} \qquad 3' \] 
+        \[ 5' \qquad  \textbf{GTGCACAAACAATACTTAAATAAATACTACTCAGTAATAACGAGCTCGTTTTCGACACTGG} \qquad 3' \] 
+
+\end{itemize}
+
+% Python to change:
+% def transACTG(l):
+%     if l == "A":
+%         return("T")
+%     if l == "C":
+%         return("G")
+%     if l == "T":
+%         return("A")
+%     if l == "G":
+%         return("C")
+
+% def conSEQ(a):
+%     b = []
+%     for i in range(0,len(a)):
+%         b.append(    transACTG(a[i]))
+%     b.reverse()
+%     c = "".join(b)
+%     print(c)
+
+\end{document}

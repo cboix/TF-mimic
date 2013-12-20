@@ -1,0 +1,364 @@
+\documentclass[landscape,a4paper]{article}
+\usepackage{calendar} % Use the calendar.sty style
+\usepackage[landscape,margin=0.5in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\noindent Timeline for QCB 301 \hfill Carles Boix }
+
+\title{Timeline QCB 301}   
+\author{Carles Boix}
+\date{\today} %no date.
+
+\begin{document}
+\noindent
+\StartingDayNumber=1 % Calendar starting day, default of 1 means Sunday, 2 for Monday, etc
+ 
+%	TITLE SECTION
+\begin{center}
+\textsc{\LARGE Timeline for QCB 301}\\ % Title text
+\end{center}
+
+%----------------------------------------------------------------------------------------
+\begin{center}
+\textsc{\Large Week of 10/14}\\ % Title text
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+% By default all daily events are centered in the box, in order to bring them up use \vspace{2cm} after the event text; % You may need to change the 2cm
+\day{}{} 
+
+%	Monday
+\day{}{} 
+
+%	Tuesday
+\day{}{
+\textbf{Plasmids} \daysep Obtain GAL + Far1-22 from Botstein Lab\\
+\textbf{Plasmids} \daysep Obtain pCORE\\
+\textbf{Plasmids} \daysep Obtain construct from McClean Lab.\\[4pt]
+\textbf{Prep} \daysep Plan out and order primers.\\
+} 
+%	Wednesday
+\day{}{ 
+    \textbf{GAL gradient} \daysep Set up plates and create dilutions.\\[4pt]
+    \textbf{Selection media} \daysep G418, 5-FOA, FAA, and SC -Leu -Trp plates.\\
+   } 
+%	Thursday
+\day{}{
+    \textbf{DO these when primers arrive:}\\
+    \textbf{Today or next week.} \daysep PCR amplify fragments for \emph{Far1-22} and \emph{Far-WT} from Botstein plasmid.\\[3pt]
+    \daysep PCR amplify fragments from pCORE \\[3pt]
+    \daysep PCR amplify fragments for ZiF$_{268}$ \emph{DBD} from Noyes plasmid.\\[3pt]
+    \textbf{GAL + FAR1-22} \daysep Extract plasmid.
+} 
+%	Friday
+\day{}{
+    \textbf{By today} \daysep Have obtained plasmids\\ Planned recombination\\ Ordered primers/oligos.\\[4pt]
+    \textbf{FAR1-wt} \daysep Is the only PCR product we must have (to create the \emph{GAL4DBD + FAR1WT} plasmid)\\
+} 
+%	Saturday
+\day{}{}
+\finishCalendar
+\end{calendar}
+
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ 
+\begin{center}
+\textsc{\Large Week of 10/21}\\ % Title text
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+\day{}{ } 
+%	Monday
+\day{}{
+    \textbf{Construction} \daysep If not done yet, do the PCR. \emph{(most likely today)}\\
+    \textbf{Recombination} \daysep Put together Far1-WT + GAL4pr plasmid.\\
+} 
+%	Tuesday
+\day{}{
+    \textbf{Construction} \daysep Introduce CORE cassette into ZEV strain and plate on G418.\\
+    \textbf{GAL gradient} \daysep Transform yeast with GAL plasmid (Botstein) and WT plasmid.\\
+    \textbf{Light Control} \daysep Transform yeast with two blue light plasmids.\\
+} 
+%	Wednesday
+\day{}{ 
+    \textbf{PCR} \daysep If we have only done pCORE so far, do the rest here.\\
+} 
+%	Thursday
+\day{}{
+    \textbf{Construction} \daysep Check G418 plates. Pick colonies. Plate onto FOA and FAA to test for cassette and location.\\
+    \textbf{GAL FAR1-wt} \daysep Store culture, extract plasmid and transform. \\ 
+    \textbf{GAL gradient} \daysep Store cultures for next week.\\
+    \textbf{Light Control} \daysep Store cultures for next week.\\
+} 
+%	Friday
+\day{}{
+    \textbf{GAL FAR1-wt} \daysep Extract plasmid (MP) and send to sequencing\\
+} 
+%	Saturday
+\day{}{
+    \textbf{By today:} \daysep FAR1-wt + GAL4pr plasmid sent to sequencing.\\[6pt]
+    Light control and GAL control transformed.\\[6pt]
+    pCORE replaced Trp1 in ZEV strain.\\
+}
+\finishCalendar
+\end{calendar}
+
+\pagebreak
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ 
+\begin{center}
+\textsc{\Large Week of 10/28}\\ % Title text
+\textbf{(Break)}
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+% By default all daily events are centered in the box, in order to bring them up use \vspace{2cm} after the event text; 
+% You may need to change the 2cm
+\day{}{ 
+    \textbf{Tests this week} \daysep GAL gradient tests:\\[6pt]
+    \textbf{Note:} \daysep Can spread this over several days, but must work with Denise's schedule, as it is break.
+} 
+%	Monday
+\day{}{
+    \textbf{Raffinose:} \daysep Grow up GAL cells overnight in raffinose. Should be FAR1-WT, FAR1-22, and non-transformed control.\\
+    \textbf{Construction} \daysep Using the CORE containing strain, recombine CORE w/ new cassette. Plate on 5-FOA plates.\\
+} 
+%	Tuesday
+\day{}{
+    \textbf{GAL plates} \daysep Perform serial dilutions and plate into galactose and glucose plates.\\
+    \textbf{Visually} \daysep Meanwhile add portioned gal/glu to cells and measure speed of cell arrest by microscopy.\\ Once arrested, add glucose and visualize cells.\\
+    \textbf{FACS} \daysep Induce all cells for 30 min (except one control group). Add propidium iodide. Set aside control group (one no glucose added and one never had galactose). Perform flow over at least 3-4 hours to measure cycle. (This might need to be on a separate day)
+} 
+%	Wednesday
+\day{}{ 
+    \textbf{Construction} \daysep From 5-FOA plates, pick colonies, plate on FAA(r) and G418(s).\\
+} 
+% TODO Grow at several light intensities and measure OD$_{600}$ over time intervals.\\
+%	Thursday
+\day{}{
+    \textbf{Transform} \daysep Several picked colonies with the blue light plasmids.\\
+    } 
+%	Friday
+\day{}{
+    \textbf{Construction} \daysep Check plates. Both with plasmid and without.
+} 
+%	Saturday
+\day{}{
+    \textbf{By today} \daysep Have done GAL experiments and have measured construct arrest in flow. Genomic construct has been made.\\
+}
+\finishCalendar
+\end{calendar}
+
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ 
+\begin{center}
+\textsc{\Large Week of 11/04}\\ % Title text
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+% By default all daily events are centered in the box, in order to bring them up use \vspace{2cm} after the event text; 
+% You may need to change the 2cm
+\day{}{ 
+    \textbf{Light Control} \daysep This week and next.\\[3pt]
+    \textbf{Alternatives} \daysep Start this week.\\[8pt]
+    Take any day to finish other work.
+} 
+%	Monday
+\day{}
+{
+    \textbf{Test Construct Arrest} \daysep Testing Far1-22, Far1WT, and WT on $\beta$-estradiol containing plates. Plate in parallel and leave overnight to assess rate of colony formation at different lights.\\ Visualize cells from liquid culture by microscopy at time points given by GAL work.\\
+    %
+}
+%	Tuesday
+\day{}{
+    \textbf{Test Construct Recovery} \daysep Using results from yesterday, choose light intensities that cause cell arrest, stimulate arrest, and then cover in foil for $\sim 120$ min to degrade Far1-22. \\ Plate some cells onto YPD ($20\%$ glucose) and also visualize by microscopy. 
+    \textbf{Set up} \daysep Materials to put together Blue light rig for next week.
+} 
+%	Wednesday
+\day{}{ 
+    \textbf{Construct Recovery} \daysep Check plates; visualize cells on slide to check for synchronization.\\[6pt]
+    Check for residual effects by measuring OD$_{600}$ against a control and an uninduced sample.\\[6pt]
+    \textbf{Blue Light Rig} \daysep Work on blue light rig.
+} 
+%	Thursday
+\day{}{
+    \textbf{Blue Light Rig} \daysep Work on blue light rig.\\
+    Set up plates for blue light experiments.
+} 
+%	Friday
+\day{}{
+    \textbf{By today} \daysep Have finished the work with $\beta$-estradiol.\\
+        Have finished the rig.
+} 
+%	Saturday
+\day{}{}
+\finishCalendar
+\end{calendar}
+\pagebreak
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------
+\begin{center}
+\textsc{\Large Week of 11/11}\\ % Title text
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+% By default all daily events are centered in the box, in order to bring them up use \vspace{2cm} after the event text; 
+% You may need to change the 2cm
+\day{}{ 
+    \textbf{Light Control} \daysep Do this week.\\[3pt]
+    \textbf{Light Experiment} \daysep Also this week, in parallel.\\
+} 
+%	Monday
+\day{}{
+    \textbf{RNA-seq} \daysep RNA-seq at $0,\; 60,\; 120, \; 240$ minutes of light intensity (IF a growth defect has been observed).\\
+    \textbf{Prep} \daysep Control blue light cultures and the rig for tomorrow.
+} 
+%	Tuesday
+\day{}{
+    \textbf{Prep} \daysep ALL blue light cultures and the rig for tomorrow.
+    \textbf{Control BL} \daysep Taking control cells, measure growth relative to no light and no CRY2/CIB1 controls over time using OD$_{600}$ and rig.\\
+} 
+%	Wednesday
+\day{}{ 
+    \textbf{Experiment BL} \daysep Taking both control cells, measure growth relative to no light and no CRY2/CIB1 controls over time using plates and rig.\\ Set up some cells for 1-2 hours and then put back in dark.
+} 
+%	Thursday
+\day{}{
+    \textbf{Control BL} \daysep Check plates and visualize Microarrays for controls and intensities \\ Should also overlap into next week?\\
+    \textbf{Exp. BL} \daysep Test for recovery
+} 
+%	Friday
+\day{}{
+    \textbf{By today} \daysep Half done with the blue light work.\\
+} 
+%	Saturday
+\day{}{}
+\finishCalendar
+\end{calendar}
+
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------
+\begin{center}
+\textsc{\Large Week of 11/18}\\ % Title text
+\end{center}
+\begin{calendar}{\hsize}
+%   Sunday	
+% By default all daily events are centered in the box, in order to bring them up use \vspace{2cm} after the event text; 
+% You may need to change the 2cm
+\day{}{ 
+    \textbf{Agenda} \daysep Anything else that is needed.
+} 
+%	Monday
+\day{}
+{
+       \textbf{Light Microarrays} \daysep Do today if not last Thursday.\\[3pt]
+} 
+%	Tuesday
+\day{}{
+    \textbf{If time, OD$_{600}$} \daysep Have raffinose starved cells from GAL group of experiments and perform a microtiter assay to measure growth overtime.
+} 
+%	Wednesday
+\day{}{ 
+} 
+%	Thursday
+\day{}{
+} 
+%	Friday
+\day{}{
+    \textbf{By today} \daysep Finished blue light testing.\\ 
+} 
+%	Saturday
+\day{}{}
+\finishCalendar
+\end{calendar}
+
+    {\Large All weeks after this: analysis and buffer time.}\\
+
+    {\large If able to, continue experiments with western blots and/or further characterization of blue light effect on yeast with different promoters to test for toxicity (such as the ones in alternative experiments).  If time, take GAL or other transformed cells, set up microtiter dishes to measure OD$_{600}$ over time.} 
+
+
+\pagebreak
+\section*{Parts List}
+\begin{minipage}[t]{0.3\textwidth}
+    
+\subsection*{Plates:}
+\begin{itemize}
+    \item 5-FOA (5-Fluoroorotic Acid)
+    \item ClonNat + G418
+    \item Synthetic Complete -LEU -TRP
+    \item FAA (Fluoroanthranilic Acid)
+    \item Glucose and Galactose gradient on minimal (glycerol)
+    \item $\beta$-estradiol gradient on minimal (glycerol)
+\end{itemize} 
+\subsection*{Plasmids:}
+\begin{itemize}
+    \item pGAL4p + FAR1-22 (Botstein)
+    \item pCORE
+    \item pMM159 (McClean, \emph{CIB1 + GAL4AD})
+    \item pMM317 (McClean, \emph{CRY2 + ZEV})
+    \item ZEV$_{268}$pr (Noyes, or QCB lab)
+\end{itemize}
+\subsection*{Chemicals:}
+\begin{itemize}
+    \item $\beta$-estradiol
+    \item raffinose, glucose, galactose
+    \item FAA, 5-FOA, G418 (Sigma Aldrich)
+    \item propidium iodide (DNA staining) (Labs? Millipore)
+    \item If time permits, $\alpha$-factor.
+\end{itemize}
+\end{minipage}
+\hfill
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ 
+\begin{minipage}[t]{0.3\textwidth}
+\subsection*{General:}
+\begin{itemize}
+    \item QIAprep Miniprep Kit
+    \item PCR mix (dNTPs, thermopol buffer, Taq DNA pol, EB)
+    \item Replica plating materials
+    \item Yeast transformation mix (LiAc, carrier DNA)
+    \item Bacterial transformation materials
+\end{itemize}
+
+\subsection*{Strains:}
+\begin{itemize}
+    \item ZEV strain (Noyes)
+    \item To be made, ZEV + CORE
+    \item Bacterial competent cells
+    \item If time permits, supersensitive (\emph{Sst-}) yeast cells (for $\alpha$-factor characterization).
+\end{itemize}
+
+\subsection*{Tools and access:}
+\begin{itemize}
+    \item FACS
+    \item Sequencing
+    \item Microscope
+    \item 6x8 replica plating tool.
+    \item Microtiter dish 
+    \item OD$_{600}$ reading (microtiter)
+    \item Microarray
+\end{itemize}
+\end{minipage}
+\hfill
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------
+\begin{minipage}[t]{0.3\textwidth}
+\subsection*{Primers:}
+\begin{itemize}
+    \item 2x pCORE to around Trp1
+    \item 2x \emph{FAR1} and \emph{FAR1-22} to ZEV and pCORE
+    \item 2x \emph{ZEVpr }to \emph{FAR1/1-22 }and pCORE
+    \item If needed, 2x primers for N-degron tag.
+    \item If needed, 2x primers for \emph{cdc4}.
+\end{itemize}
+
+\subsection*{Blue Light Rig (From Open Wet Ware)}
+\begin{itemize}
+    \item[] \emph{Physics storeroom:}
+    \item 0.1 $\mu F$ capacitors
+    \item 100 $\Omega$ 1/4 watt resistor
+    \item 22 gauge solid core wire
+    \item Toggle Switch
+    \item LEDs (460nm emittance)
+    \item[] \emph{From Newark through Princeton Marketplace: Arduino: Newark part $\#63W3545$; lm7805: $\#09J6572$; 12V power supply $\#40P7518$; breadboard $\#99W1760$.}
+\end{itemize}
+\end{minipage}
+%------------------ %------------------ %------------------ %------------------ %------------------ %------------------ %------------------ 
+
+
+\end{document}
