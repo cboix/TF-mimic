@@ -59,14 +59,3 @@ do
     } fi
 done < .tmpfile3
 rm -f .tmpfile3
-
-# Paper -- Dsl1 mechanism (smallest one, has only 3 subunits).
-# Jun's rubric -- ALSO READ THE RUBRIC
-# Abstract: include one sentence on your critique
-# Background: Will make a list of important parts, cover them all equally. He will give points per each part that you hit correctly)
-# Data analysis: Write in your own words, your summary.
-# Critique: 
-#   1. Data interpretation (positive or negative interpretation. You do not have to be negative. If for example you think that the figure is good but the text is not sufficient to explain it, then you can try to supplement the explanation, drawing on the figure. If irrationally negative, this is bad, you get the same point by being positive.)
-#   2. Implication (10 = professional, 8 = more than one good idea.... Need to understand the background and say what the contribution of this paper to the research community is.)
-#   3. Future directions (Deeply related to the background research, as you need to read reviews to get the ideas about the field (SNAREs, tethering factors, membrane trafficking, etc.)) No progress in the field after 2009. (for example, relate to CDG? or something like that-- what might mutations do)
-#	For example is it more relevant to do this in a different system? Can we prove something better? Make sure that technologically it makes sense as well.
