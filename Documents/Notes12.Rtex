@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[lmargin =1in,rmargin=1in,tmargin =1in, bmargin =1in]{geometry}                
+\geometry{letterpaper}               
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{amssymb} \usepackage{fancyhdr}
+\usepackage[affil-it]{authblk}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{natbib}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhead{} % delete current setting for header
+\fancyhead[C]{\noindent Notes from December \hfill Carles Boix }
+%\linespread{1.6}
+%% for inline R code: if the inline code is not correctly parsed, you will see a message
+\newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
+%% begin.rcode setup, include=FALSE
+% opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
+%% end.rcode
+
+
+
+%% begin.rcode bin1, message=FALSE
+%% end.rcode
+\begin {document}
+\section{Notes}
+\subsection{12/28}
+\textbf{MIG1}:
+ATF only experiences the effect of increase in stress response which we have seen maps perfectly to other ATFs. Therefore, there is something there that we must look at; possibly construction; possibly preparation. Furthermore, when we look at MIG1, which appears to have a strong signal, we get a strong signal for the RAP1, MSN2, and MIG1 motifs in the ATF but only for MIG1 in the ZEV construct. 
+
+When I take the top 200 from each and join them, the signal is in MIG1 and MSN2 (32 genes only, many HXT). I will need to look at the motifs specifically for these proteins, but they are very promising. However, only six of these genes are actually MIG1 targets as reported by SGD. Room for discovery? I need to look into this more specifically\footnote{13 are MSN2 targets (SGD), and of the 6 MIG targets, 3 are MSN2 targets; these two TFs seem to work together; maybe I can say something about the relationship?}.
+
+We need to look at this in another way: \emph{where are the genes with motifs that match MIG1?} Are they distributed more upward in ATF than ZEV? and of course are they up/down regulated relative to baseline?\\
+
+
+\textbf{MSN2}:
+In the case of the top targets from ATF and ZEV for MSN2, we see \textbf{NO} difference between all genes and MSN2 at any time point for ATF, except for between 0 and 90u, where there may be a slight decrease (crowded out by other genes?)\footnote{Maybe another type of metric; not top 200 is in order?}. The merged list, that is, the genes in the top 200 in ATF and ZEV, has an increased occurrence of the MSN2 motif. This is certainly an interesting observation.\\
+
+
+For ZEV, there is a difference, if slight. I need to try to look at where the genes with motifs corresponding to MSN2 are placed on this.\\
+
+\textbf{RAP1}:
+Nothing to say today. This may be the key to eliciting data from the 0-15 fold changes, but even that is unlikely. Let's just leave this alone until we have to discuss problems with the data, as it is the data set that will yield the clearest data on the ATF.\\
+
+\textbf{With respect to code}:
+I compiled a single table with all of the motif occurrences (above .25 occupancy)\footnote{Refer to Marcus for this} for each of the genes. It is quite sparse, which is good if I later want to do some groupwise analysis.
+
+\subsection{12/29}
+Beware of the expert curated motifs! The one for MSN2 is $\sim 5$ bases long, while the one for Rap1 is 13 bases. I show this in the following motifs logos (Figures~\ref{fig:logo1} and~\ref{fig:logo2}):
+
+%% begin.rcode logo1, dev='png', fig.align='center',fig.width =6,fig.height=2,dpi =250,out.width='.9\\textwidth', message=FALSE, echo = FALSE,error =FALSE,fig.cap='MSN2'
+% library(seqLogo)
+% read.table('/home/carles/QCB301/ReferenceGenomesandAnnotations/1.02/ALIGNED_ENOLOGO_FORMAT_PFMS/YMR037C_1380.pfm') -> MSN2
+% seqLogo(MSN2[,2:8],xaxis=FALSE)
+%% end.rcode
+
+%% begin.rcode logo2, dev='png', fig.align='center',fig.width =6,fig.height=2,dpi =250,out.width='.9\\textwidth', message=FALSE, echo = FALSE,error =FALSE,fig.cap='RAP1'
+% library(seqLogo)
+% read.table('/home/carles/QCB301/ReferenceGenomesandAnnotations/1.02/ALIGNED_ENOLOGO_FORMAT_PFMS/YNL216W_254.pfm') -> RAP1
+% seqLogo(RAP1[,2:14],xaxis=FALSE)
+%% end.rcode
+
+\end{document}

@@ -10,7 +10,7 @@ shinyUI(pageWithSidebar(
     # Sidebar with controls to select the variable to plot
     sidebarPanel(
         selectInput("time", "Time Range:", list("0-15 induced" = "0-15i", "0-90 induced" = "0-90i", "0-90 uninduced" = "0-90u", "90-90 uninduced" = "90i-90u"),'0-15 induced'),
-        radioButtons("tf", "Transcription Factor:", c("MIG1" = "MIG1/n", "MSN2" = "MSN2/m", "RAP1" = "RAP1/r"),'MSN2'),
+        radioButtons("tf", "Transcription Factor:", c("MIG1" = "MIG1/i", "MSN2" = "MSN2/m", "RAP1" = "RAP1/r"),'MSN2'),
         radioButtons('protein', 'Dataset', c('ATF'='A', 'ZEV'='Z'), 'ATF')
     ),
 
@@ -57,7 +57,7 @@ fileInput('fileTFlist', 'Upload TF list', accept=c('text/tsv', 'text/tab-separat
             plotOutput('againstPlot'),
             wellPanel(
             selectInput("time2", "Time Range:", list("0-15 induced" = "0-15i", "0-90 induced" = "0-90i", "0-90 uninduced" = "0-90u", "90-90 uninduced" = "90i-90u"),'0-90 induced'),
-            radioButtons("tf2", "Transcription Factor:", c("MIG1" = "MIG1/n", "MSN2" = "MSN2/m", "RAP1" = "RAP1/r"),'MSN2'),
+            radioButtons("tf2", "Transcription Factor:", c("MIG1" = "MIG1/i", "MSN2" = "MSN2/m", "RAP1" = "RAP1/r"),'MSN2'),
             radioButtons('protein2', 'Dataset', c('ATF'='A', 'ZEV'='Z'), 'ATF'),
             textInput('geneDiff','Gene:'),
             fileInput('file2', 'Upload gene list', accept=c('text/tsv', 'text/tab-separated-values,text/plain', '.tsv')),

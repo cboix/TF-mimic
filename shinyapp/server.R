@@ -42,7 +42,7 @@ shinyServer(function(input, output) {
 
         tt <- merge(tfIN[,c(1,6)],tfIN2[,c(1,6)])
 
-        p <- ggplot(tt,aes(log2_tf,log2_tf2)) + geom_point(alpha=.4) + labs(x=paste(input$time,'for',strsplit(input$tf,"/")[[1]][1]),y=paste(input$time2,'for',strsplit(input$tf2,"/")[[1]][1]))
+        p <- ggplot(tt,aes(log2_tf,log2_tf2)) + geom_point(alpha=.4) + labs(x=paste(input$time,'for',strsplit(input$tf,"/")[[1]][1]),y=paste(input$time2,'for',strsplit(input$tf2,"/")[[1]][1])) + scale_x_continuous(lim=c(-15,15)) + scale_y_continuous(lim=c(-15,15))
 
         gLC <- tt[tt$gene== paste(input$geneDiff),];
         if (length(gLC) == 3){ p <- p + geom_point(data=gLC,aes(x=log2_tf,y=log2_tf2),color='red',cex=5)}
@@ -102,11 +102,15 @@ shinyServer(function(input, output) {
 
     # PROMOTER ANALYSIS:
     output$promoterHits <- renderPlot({
+        tsv <- read.table('/home/carles/QCB301/promoters/FINALcounts.tsv')
+
+
+
         OTG <- read.table('/home/carles/QCB301/ReferenceGenomesandAnnotations/ORFtoGENE',header=T)
         OTG<- OTG[order(OTG$ORFname),]
         names(OTG) <- c('pwm','TF')
 
-        # No need to check for existence? Lets  just not move this file :)
+        # No need to check for existence? Lets just not move this file :)
         TFS <- read.table('/home/carles/QCB301/ReferenceGenomesandAnnotations/AllMotifs.pcounts',header=F)
         TFS <- cbind(TFS,'All')
         names(TFS) <- c('pwm','Count','Type')
