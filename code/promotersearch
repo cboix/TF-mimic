@@ -4,6 +4,7 @@ OUTFILE=$2
 QCBDIR=~/QCB301
 REFDIR=$QCBDIR/ReferenceGenomesandAnnotations
 PROMOTERS=$REFDIR/promoter_sequences.fasta
+PDIR=$QCBDIR/promoters
 
 rm -f $OUTFILE
 while read -r p
@@ -48,14 +49,28 @@ done < .tmpfile2
 rm -f .tmpfile2
 
 # Condense, with a threshold of 0.25
-ls $QCBDIR/promoters > .tmpfile3
+ls $PDIR > .tmpfile3
 while read -r p
 do
     eval $( echo $p | awk '$0 ~ /tfbs/{printf("tfbs=%s",$1)}' )
     # NEED TO CHECK that it is not 0 size (if it isnt fasta)
-    if [[ -s $tfbs ]] {
+    if [[ -s $PDIR/$tfbs ]] {
         pcounts="${tfbs%.*}"\.pcounts
-        awk '$5 > 0.25 && NR > 1 {print $1}' $tfbs | sort | uniq -c > $pcounts
+        awk '$5 > 0.25 && NR > 1 {print $1}' $PDIR/$tfbs | sort | uniq -c > $PDIR/$pcounts
+    } fi
+done < .tmpfile3
+rm -f .tmpfile3
+
+# NOTE the different threshold:
+# Condense, with a threshold of 0.1
+ls $PDIR > .tmpfile3
+while read -r p
+do
+    eval $( echo $p | awk '$0 ~ /tfbs/{printf("tfbs=%s",$1)}' )
+    # NEED TO CHECK that it is not 0 size (if it isnt fasta)
+    if [[ -s $PDIR/$tfbs ]] {
+        pcounts="${tfbs%.*}"\.pcounts_2
+        awk '$5 > 0.1 && $0 ~ /\.pwm/ > 1 {print $1}' $PDIR/$tfbs | sort | uniq -c > $PDIR/$pcounts
     } fi
 done < .tmpfile3
 rm -f .tmpfile3

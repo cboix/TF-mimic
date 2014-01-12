@@ -10,8 +10,8 @@ shinyUI(pageWithSidebar(
     # Sidebar with controls to select the variable to plot
     sidebarPanel(
         selectInput("time", "Time Range:", list("0-15 induced" = "0-15i", "0-90 induced" = "0-90i", "0-90 uninduced" = "0-90u", "90-90 uninduced" = "90i-90u"),'0-15 induced'),
-        radioButtons("tf", "Transcription Factor:", c("MIG1" = "MIG1/i", "MSN2" = "MSN2/m", "RAP1" = "RAP1/r"),'MSN2'),
-        radioButtons('protein', 'Dataset', c('ATF'='A', 'ZEV'='Z'), 'ATF')
+        radioButtons("tf", "Transcription Factor:", c("MIG1" = "MIG1/i","MIG1 Adj."="MIG1/iF", "MSN2" = "MSN2/m","MSN2 Adj."="MSN2/mF", "RAP1" = "RAP1/r"),"MIG1"),
+        radioButtons('protein', 'Dataset', c('ATF'='A', 'ZEV'='Z'), 'ZEV')
     ),
 
   mainPanel(
@@ -22,16 +22,31 @@ shinyUI(pageWithSidebar(
             wellPanel(
                 fileInput('file1', 'Upload gene list', accept=c('text/tsv', 'text/tab-separated-values,text/plain', '.tsv')),
                 tags$hr(), 
-                checkboxInput('pval', 'Wilcoxon Test', FALSE), 
+                checkboxInput('wxc', 'Wilcoxon Test', FALSE), 
                 textInput('gene','Gene:')
                 # TODO Keep adding genes and have a clear button if possible.
                 )
             ),
-                
+
+         tabPanel("Motif compare",
+            plotOutput('motifPlot'),
+            wellPanel(
+                textInput('motifComp','Motif(s). Comma-separated.'),
+                checkboxInput('highTol', 'High Tolerance? (.25 = occ)', FALSE),
+                fileInput('fileMot', 'Upload gene list', accept=c('text/tsv', 'text/tab-separated-values,text/plain', '.tsv')),
+                tags$hr(), 
+                #checkboxInput('wxcMotif', 'Wilcoxon Test', FALSE), 
+                checkboxInput('weightedMotif', 'Weighted by motif occurrence?', FALSE), 
+                textInput('geneMot','Gene:')
+                # TODO Keep adding genes and have a clear button if possible.
+                )
+            ),
+               
         tabPanel("Promoter Analysis",
 # SHOW Only tfs that the gene has, against average (or cummulative) TF counts. 
 # USE the gene set to look at gene promoters.
-                 plotOutput("promoterHits"),
+                 # plotOutput("promoterHits"),
+                 plotOutput("promoterHits2"),
                  wellPanel(
 "The threshold occupancy for these TFs is 0.25", textInput('geneTFhist','Gene:'),
 checkboxInput('onlyMMR','Only show MIG1, MSN2, and RAP1:',FALSE),
@@ -62,9 +77,18 @@ fileInput('fileTFlist', 'Upload TF list', accept=c('text/tsv', 'text/tab-separat
             textInput('geneDiff','Gene:'),
             fileInput('file2', 'Upload gene list', accept=c('text/tsv', 'text/tab-separated-values,text/plain', '.tsv')),
                 tags$hr())
-            )
-        )
-    )
-))
+            ),
+
+        tabPanel("Motif Logo",
+        plotOutput('showLogo'),
+        wellPanel(textInput('motifLogo','Motif:'))
+        ),
+
+        tabPanel("Table",
+                 dataTableOutput("geneTable")
+                 )
+    ))
+  )
+)
 
 # TODO add a Go term menu where you can pick several GO sets.

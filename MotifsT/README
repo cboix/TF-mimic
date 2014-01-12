@@ -1,0 +1,7 @@
+These are the cut motifs for MIG and RAP1 from:
+
+Zhu C, Byers KJ, McCord RP, Shi Z, Berger MF, Newburger DE, Saulrieta K, Smith Z, Shah MV, Radhakrishnan M, Philippakis AA, Hu Y, De Masi F, Pacek M, Rolfs A, Murthy T, Labaer J, Bulyk ML. High-resolution DNA-binding specificity analysis of yeast transcription factors. Genome Res. 2009 Apr;19(4):556-66. Epub 2009 Jan 21.
+
+They should be 9 bases long. MSN2 is also included - this is the expert motif for MSN2.
+
+I put them in the PWMs folder with a B after the systematic name to indicate difference. We can pull them out of the database by searching for MIG1B, MSN2B, and RAP1B

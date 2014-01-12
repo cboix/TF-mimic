@@ -1,0 +1,11 @@
+#!/bin/bash
+# Take rap1 data: ra1 (0-90i) and ra9 (0-90i)
+
+#how do we handle exceptions -- that is: -inf. we could just subtract the start + stop (or the difference?)
+
+
+# re-sort:
+(head -1 $1 && tail -70000 $1 | sort -k 14 -r -k 10) > tmp
+mv tmp $1
+
+

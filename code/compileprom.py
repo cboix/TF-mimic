@@ -9,6 +9,10 @@ import os
 import sys
 
 lsdir = os.listdir(MOTIFS)
+lsdir.append('YMR037Cb_p')
+lsdir.append('YNL216Wb_p')
+lsdir.append('YGL035Cb_p')
+
 pwm = []
 for file in lsdir:
     if (file != 'AllMotifs.pwm'):
@@ -22,16 +26,16 @@ d = dict(zip(pwm,zeros))
 
 lsdir = os.listdir(DIRECTORY)
 
+# CHANGE BACK TO pcounts if necessary
 for file in lsdir:
-    if (file.split(".")[1] == 'pcounts'):
+    if (file.split(".")[1] == 'pcounts_2'):
         with open(DIRECTORY + "/" + file,'r') as readin:
             header=readin.readline()
             for line in readin:
                 a = line.split("\n")[0].split(" ")
                 d[a[-1]] = d[a[-1]] + int(a[-2])
 
-with open('QCB301/AllMotifs.pcounts','w') as out:
+with open('QCB301/AllMotifs.pcounts_2','w') as out:
     for key in d:
         out.write(key + " " + str(d[key]) + "\n")
-    
-            
+

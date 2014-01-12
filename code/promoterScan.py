@@ -6,6 +6,11 @@ PROMOTERS='/home/carles/QCB301/ReferenceGenomesandAnnotations/promoter_sequences
 MOTIFS='/home/carles/QCB301/ReferenceGenomesandAnnotations/1.02/ALIGNED_ENOLOGO_FORMAT_PWMS/AllMotifs.pwm'
 # Some default list, to be given.
 TARGETS='/home/carles/QCB301/Lists/AllGenes'
+THRESHOLD=0.025
+
+## CONDITIONS FOR ADDING THE CUT THREE TFS! comment if not needed...
+# REFRESH=True
+# MOTIFS='/home/carles/QCB301/MotifsT/PWMs/AllThree.pwm'
 
 import os.path
 import sys
@@ -73,7 +78,7 @@ def compare_motif(lines,pwm,consensus,threshold,strand):
         if abs(this - last) > 1:
             breaker=1
             break
-        #Compare the dmelanogaster sequence only.
+        #Compare the dmelanogaster(first one) or yeast sequence only.
         value = value + float(pwm[line[0].upper()][i])
         # This can and should be adjusted.
         if value < -10:
@@ -99,6 +104,18 @@ def compare_motif(lines,pwm,consensus,threshold,strand):
     else:
         return(0)
 
+def revline(line):
+    if(line[0].upper() == 'A'):
+        return(['T',line[1]])
+    if(line[0].upper() == 'G'):
+        return(['C',line[1]])
+    if(line[0].upper() == 'C'):
+        return(['G',line[1]])
+    if(line[0].upper() == 'T'):
+        return(['A',line[1]])
+    else:
+        return(line)
+
 def find_motifs(filename,pwm,threshold):
     motif = []
     consensus = pwm['consensus']
@@ -110,7 +127,7 @@ def find_motifs(filename,pwm,threshold):
             # define position, make it a simple array
             line = [line[0].split("\n")[0] , place]
             lines.append(line)
-            backlines.insert(0,line)
+            backlines.insert(0,revline(line))
             if len(lines) == pwm['length']:
                 motif.append(compare_motif(lines,pwm,consensus,threshold,"+"))
                 # Here get rid of the earliest line:
@@ -149,7 +166,7 @@ def gene_compute(gene,directory,refresh):
     if (os.path.exists(namein)):
         # If out file exists, don't do this unless refresh.
         if (not os.path.exists(nameout) or refresh):
-            motifs=compute_file(namein,PWM,0.025)
+            motifs=compute_file(namein,PWM,THRESHOLD)
             with open(nameout,'a') as out:
                 out.write(headerline);
                 for m in motifs:
@@ -163,6 +180,9 @@ with open(TARGETS,'r') as tar:
     for geneline in tar:
         gene = geneline.split("\n")[0]
         gene_compute(gene,DIRECTORY,REFRESH)
+
+# NOTE 
+# AFTER THIS, run the conversion from tfbs to pcounts in the 'createlists' file
 
 #To test:
 # pwm=PWM[1]
