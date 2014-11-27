@@ -1,4 +1,0 @@
-\beamer@endinputifotherversion {3.27pt}
-\beamer@sectionintoc {1}{Background}{2}{0}{1}
-\beamer@sectionintoc {2}{Results}{10}{0}{2}
-\beamer@sectionintoc {3}{Conclusions}{16}{0}{3}
