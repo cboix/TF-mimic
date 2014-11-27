@@ -66,4 +66,24 @@ Beware of the expert curated motifs! The one for MSN2 is $\sim 5$ bases long, wh
 
 I redid the promoter/motif analysis framework with the full data-table in mind. I may have to add error bars to this to make it accurate if I mean to read into the data/present it.
 
+\subsection{1/12}
+Ran MEME on top (25) known MIG1 targets in ATF and ZEV 0-90i. Did the same thing for top (50) MSN2 targets.
+
+\begin{itemize}
+    \item Motifs in MEME for \textbf{MIG1} in \textbf{ATF} (50!):
+        \begin{itemize}
+            \item 98 sites of some sort of AA$\cdots$A
+            \item 85 sites of GGAAAAA or GGAGAAA (looks like MSN2 backwards)
+            \item 17 of some CAGC (repeated, so CAGCaaCAGC)
+            \item 66 sites of TTTTCC/ CCCTCT or similar.
+        \end{itemize}
+
+    \item Motifs in MEME for \textbf{MIG1} in \textbf{ZEV} (25):
+        \begin{itemize}
+            \item 
+        \end{itemize}
+
+\end{itemize}
+
+
 \end{document}

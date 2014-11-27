@@ -117,9 +117,21 @@ shinyServer(function(input, output) {
         tfIN2 <- tfIN2[order(tfIN2$gene),]
         names(tfIN2)[6] <- 'log2_tf2'
 
-        tt <- merge(tfIN[,c(1,6)],tfIN2[,c(1,6)])
 
-        p <- ggplot(tt,aes(log2_tf,log2_tf2)) + geom_point(alpha=.4) + labs(x=paste(input$time,'for',strsplit(input$tf,"/")[[1]][1]),y=paste(input$time2,'for',strsplit(input$tf2,"/")[[1]][1])) + scale_x_continuous(lim=c(-15,15)) + scale_y_continuous(lim=c(-15,15))
+        tt <- merge(tfIN[,c(1,6)],tfIN2[,c(1,6)])
+        tt <- tt[tt$log2_tf != Inf,]
+        tt <- tt[tt$log2_tf != -Inf,]
+        tt <- tt[tt$log2_tf2 != Inf,]
+        tt <- tt[tt$log2_tf2 != -Inf,]
+
+        model <- lm(log2_tf2 ~ log2_tf, data=tt, na.action=na.omit)
+        ra <- range(tt$log2_tf)
+        ra2 <- model$coefficients[[1]] + model$coefficients[[2]]
+        r.sq <- summary(model)$r.squared
+        print(r.sq)
+        dtfW <- data.frame(RSQ = r.sq)
+
+        p <- ggplot(tt,aes(log2_tf,log2_tf2)) + geom_point(alpha=.4) + labs(x=paste(input$time,'for',strsplit(input$tf,"/")[[1]][1]),y=paste(input$time2,'for',strsplit(input$tf2,"/")[[1]][1])) + scale_x_continuous(lim=c(-15,15)) + scale_y_continuous(lim=c(-15,15)) + geom_text(data=dtfW,aes(x=10,y= -10,label=paste("r.sq =",RSQ)))
 
         gLC <- tt[tt$gene== paste(input$geneDiff),];
         if (length(gLC) == 3){ p <- p + geom_point(data=gLC,aes(x=log2_tf,y=log2_tf2),color='red',cex=5)}

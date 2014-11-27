@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.12.27)  29 DEC 2013 17:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.12.27)  12 JAN 2014 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,22 +364,31 @@ Package pdftex.def Info: figure/latex-logo2.png used on input line 120.
  [1{/home/carles/.texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2 <./figure/latex-logo1.png (PNG copy)> <./figure/latex-logo2.png (PNG copy)
->] [3] (./Notes12.aux) ) 
+>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 139.
+
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 139.
+
+[3] (./Notes12.aux) ) 
 Here is how much of TeX's memory you used:
- 4188 strings out of 493311
- 60658 string characters out of 6143649
+ 4205 strings out of 493311
+ 60934 string characters out of 6143649
  132202 words of memory out of 5000000
- 7574 multiletter control sequences out of 15000+600000
+ 7588 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,11n,43p,600b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Notes12.pdf (3 pages, 137942 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Notes12.pdf (3 pages, 139798 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream

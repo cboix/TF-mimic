@@ -1,4 +1,7 @@
 # Files to be ignored:
+threeprom/*
+Presentations/*
+Documents/*
 MIG1/*
 MSN2/*
 RAP1/*
